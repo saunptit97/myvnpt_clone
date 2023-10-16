@@ -4,6 +4,7 @@ import 'package:my_vnpt/utils/color_util.dart';
 import 'package:my_vnpt/utils/icons_utils.dart';
 import 'package:my_vnpt/widgets/sliver_widget.dart';
 
+import 'widgets/item_category.dart';
 import 'widgets/item_free_package.dart';
 import 'widgets/item_package.dart';
 import 'widgets/item_package_data.dart';
@@ -54,40 +55,79 @@ class _PhonePackageScreenState extends State<PhonePackageScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Stack(
-                  children: [
-                    Container(
-                      height: 55,
-                      decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.2),
-                            spreadRadius: 1,
-                            blurRadius: 5,
-                            offset: const Offset(
-                                0, 1), // changes position of shadow
-                          ),
-                        ],
-                        borderRadius: BorderRadius.circular(100),
-                      ),
-                    ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        fillColor: Colors.white,
-                        filled: true,
-                        hintText: "Quý khách đang tìm gói cước gì?",
-                        prefixIcon: const Icon(
-                          Icons.search,
-                          size: 30,
-                          color: ColorUtil.greyColor,
-                        ),
-                        border: OutlineInputBorder(
+              Container(
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Stack(
+                    children: [
+                      Container(
+                        height: 55,
+                        decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.2),
+                              spreadRadius: 1,
+                              blurRadius: 5,
+                              offset: const Offset(
+                                  0, 1), // changes position of shadow
+                            ),
+                          ],
                           borderRadius: BorderRadius.circular(100),
-                          borderSide: BorderSide.none,
                         ),
                       ),
+                      TextFormField(
+                        decoration: InputDecoration(
+                          fillColor: Colors.white,
+                          filled: true,
+                          hintText: "Quý khách đang tìm gói cước gì?",
+                          prefixIcon: const Icon(
+                            Icons.search,
+                            size: 30,
+                            color: ColorUtil.greyColor,
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(100),
+                            borderSide: BorderSide.none,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                color: Colors.white,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    ItemCategoryWidget(
+                      name: "Gói cước Combo",
+                      icon: IconUtils.packageDataHot,
+                      onTap: () {
+                        Navigator.pushNamed(context, RouteNames.category);
+                      },
+                    ),
+                    ItemCategoryWidget(
+                      name: "Ưu đãi Data",
+                      icon: IconUtils.packageDataHot,
+                      onTap: () {
+                        Navigator.pushNamed(context, RouteNames.category);
+                      },
+                    ),
+                    ItemCategoryWidget(
+                      name: "Miễn phí MXH",
+                      icon: IconUtils.packageDataHot,
+                      onTap: () {
+                        Navigator.pushNamed(context, RouteNames.category);
+                      },
+                    ),
+                    ItemCategoryWidget(
+                      name: "Gói cước quốc tế",
+                      icon: IconUtils.packageDataHot,
+                      onTap: () {
+                        Navigator.pushNamed(context, RouteNames.category);
+                      },
                     ),
                   ],
                 ),

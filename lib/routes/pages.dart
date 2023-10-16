@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_vnpt/category/view.dart';
 import 'package:my_vnpt/confirm_payment/view.dart';
 import 'package:my_vnpt/home_navigate/view.dart';
 import 'package:my_vnpt/phone_package_detail/view.dart';
@@ -36,6 +37,13 @@ class Pages {
             return PhonePackageDetailScreen(
               data: args is Map<String, dynamic> ? args['detail'] : null,
             );
+          },
+          settings: settings,
+        );
+      case RouteNames.category:
+        return MaterialPageRoute(
+          builder: (_) {
+            return CategoryScreen();
           },
           settings: settings,
         );

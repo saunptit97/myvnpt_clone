@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:my_vnpt/routes/routes.dart';
 import 'package:my_vnpt/utils/icons_utils.dart';
 
 import 'item_service_widget.dart';
 
-class FavouriteWidget extends StatelessWidget {
+class FavouriteWidget extends StatefulWidget {
   FavouriteWidget({super.key});
 
+  @override
+  State<FavouriteWidget> createState() => _FavouriteWidgetState();
+}
+
+class _FavouriteWidgetState extends State<FavouriteWidget> {
   final List<Map<String, dynamic>> favourites = [
     {
       "icon": IconUtils.icNapDienThoai,
@@ -28,6 +34,7 @@ class FavouriteWidget extends StatelessWidget {
       "onTap": () {}
     },
   ];
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -63,7 +70,14 @@ class FavouriteWidget extends StatelessWidget {
               return ItemServiceWidget(
                 title: favourites[index]['name'],
                 icon: favourites[index]['icon'],
-                onTap: favourites[index]['onTap'],
+                onTap: () {
+                  if (index == 0) {
+                    Navigator.pushNamed(
+                      context,
+                      RouteNames.rechargeMoney,
+                    );
+                  }
+                },
               );
             },
             separatorBuilder: (_, index) {

@@ -22,4 +22,8 @@ class IconUtils {
   static const String packageDataBestForSale =
       "assets/images/package_data_best_for_sale.png";
   static const String packageDataHot = "assets/images/package_data_hot.png";
+  static const String icBank = "assets/images/icon_bank_noname_circle.webp";
+  static const String viettel = "assets/images/icon_buycard_viettel.webp";
+  static const String vinaphone = "assets/images/icon_buycard_vina.webp";
+  static const String mobi = "assets/images/icon_buycard_mobi.webp";
 }

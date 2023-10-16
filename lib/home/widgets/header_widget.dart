@@ -31,104 +31,102 @@ class HeaderWidget extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Container(
-                            height: 60,
-                            width: 60,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(45),
-                            ),
-                            child: Center(
-                              child: Container(
-                                height: 54,
-                                width: 54,
-                                decoration: BoxDecoration(
-                                  color: const Color(0xffE4EBFF),
-                                  borderRadius: BorderRadius.circular(45),
-                                ),
-                                child: const Icon(
-                                  Icons.person,
-                                  size: 54,
-                                  color: Color(0xff4296FF),
-                                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Container(
+                          height: 60,
+                          width: 60,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(45),
+                          ),
+                          child: Center(
+                            child: Container(
+                              height: 54,
+                              width: 54,
+                              decoration: BoxDecoration(
+                                color: const Color(0xffE4EBFF),
+                                borderRadius: BorderRadius.circular(45),
+                              ),
+                              child: const Icon(
+                                Icons.person,
+                                size: 54,
+                                color: Color(0xff4296FF),
                               ),
                             ),
                           ),
-                          const SizedBox(width: 10),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text(
-                                "Xin chào",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15,
-                                ),
+                        ),
+                        const SizedBox(width: 10),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              "Xin chào",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 15,
                               ),
-                              const SizedBox(height: 5),
-                              Text(
-                                "Nguyễn Thị Nghĩ".toUpperCase(),
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 16,
-                                ),
-                              )
-                            ],
-                          )
+                            ),
+                            const SizedBox(height: 5),
+                            Text(
+                              "Nguyễn Thị Nghĩ".toUpperCase(),
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16,
+                              ),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                    const SizedBox(height: 35),
+                    Container(
+                      width: 200,
+                      padding: const EdgeInsets.all(3),
+                      decoration: BoxDecoration(
+                        color: const Color(0xff459FDB),
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                      child: Row(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 8,
+                              horizontal: 15,
+                            ),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(100),
+                            ),
+                            child: const Text(
+                              "Di động",
+                              style: TextStyle(
+                                color: Color(0xff546CCE),
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 10,
+                              horizontal: 15,
+                            ),
+                            child: const Text(
+                              "Internet/TV",
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
                         ],
                       ),
-                      const SizedBox(height: 35),
-                      Container(
-                        width: 200,
-                        padding: const EdgeInsets.all(3),
-                        decoration: BoxDecoration(
-                          color: const Color(0xff459FDB),
-                          borderRadius: BorderRadius.circular(100),
-                        ),
-                        child: Row(
-                          children: [
-                            Container(
-                              padding: const EdgeInsets.symmetric(
-                                vertical: 8,
-                                horizontal: 15,
-                              ),
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(100),
-                              ),
-                              child: const Text(
-                                "Di động",
-                                style: TextStyle(
-                                  color: Color(0xff546CCE),
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                            Container(
-                              padding: const EdgeInsets.symmetric(
-                                vertical: 10,
-                                horizontal: 15,
-                              ),
-                              child: const Text(
-                                "Internet/TV",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(height: 20),
-                    ],
-                  ),
+                    ),
+                    const SizedBox(height: 20),
+                  ],
                 ),
               ],
             ),

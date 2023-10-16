@@ -3,8 +3,6 @@ import 'package:my_vnpt/config/theme.dart';
 import 'package:my_vnpt/routes/pages.dart';
 import 'package:my_vnpt/routes/routes.dart';
 
-import 'home_navigate/view.dart';
-
 void main() {
   runApp(const MyApp());
 }

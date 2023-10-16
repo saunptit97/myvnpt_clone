@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:my_vnpt/recharge_money/card/view.dart';
 import 'package:my_vnpt/recharge_money/mobile/view.dart';
 import 'package:my_vnpt/utils/color_util.dart';
 import 'package:my_vnpt/utils/icons_utils.dart';
+
+import 'auto/view.dart';
 
 class RechargeMoney extends StatefulWidget {
   const RechargeMoney({super.key});
@@ -29,6 +32,8 @@ class _RechargeMoneyState extends State<RechargeMoney>
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
+    double appBarHeight = AppBar().preferredSize.height;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -55,7 +60,9 @@ class _RechargeMoneyState extends State<RechargeMoney>
         children: [
           Stack(
             children: [
-              SizedBox(width: size.width, height: size.height - 200),
+              SizedBox(
+                  width: size.width,
+                  height: size.height - appBarHeight - kToolbarHeight - 10),
               Container(
                 height: 200,
                 width: MediaQuery.of(context).size.width,
@@ -143,16 +150,10 @@ class _RechargeMoneyState extends State<RechargeMoney>
                       Expanded(
                         child: TabBarView(
                           controller: _tabController,
-                          children: <Widget>[
+                          children: const <Widget>[
                             RechargeMoneyMobileTab(),
-                            Card(
-                              margin: const EdgeInsets.all(16.0),
-                              child: Center(child: Text('2')),
-                            ),
-                            Card(
-                              margin: const EdgeInsets.all(16.0),
-                              child: Center(child: Text('2')),
-                            ),
+                            BuyCardMobileTab(),
+                            AutoPaymentTab(),
                           ],
                         ),
                       ),

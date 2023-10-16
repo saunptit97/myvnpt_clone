@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_vnpt/utils/color_util.dart';
 
+import 'item_payment.dart';
+
 class MethodPaymentWidget extends StatefulWidget {
   const MethodPaymentWidget({super.key});
 
@@ -65,8 +67,8 @@ class _MethodPaymentWidgetState extends State<MethodPaymentWidget> {
       context: context,
       builder: (BuildContext context) {
         return Container(
-          height: 200,
           color: Colors.white,
+          height: 400,
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -95,10 +97,20 @@ class _MethodPaymentWidgetState extends State<MethodPaymentWidget> {
                     )
                   ],
                 ),
-                const Text('Modal BottomSheet'),
-                ElevatedButton(
-                  child: const Text('Close BottomSheet'),
-                  onPressed: () => Navigator.pop(context),
+                const SizedBox(
+                  height: 10,
+                ),
+                ItemPaymentWidget(
+                  title: "Ví VNPT Pay",
+                  description:
+                      "Thanh toán bằng Ví VNPT Pay để được áp dụng các khuyến mãi hiện có (Khuyên dùng)",
+                  onTap: () {},
+                ),
+                ItemPaymentWidget(
+                  title: "NH nội địa/ quốc tế khác",
+                  description:
+                      "Thanh toán bằng tài khoản ngân hàng nội địa hoặc thẻ quốc tế",
+                  onTap: () {},
                 ),
               ],
             ),
