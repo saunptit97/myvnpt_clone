@@ -121,19 +121,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     Wrap(
                       children: [
                         TagWidget(tag: "BIG90"),
-                        SizedBox(
-                          width: 10,
-                        ),
+                        SizedBox(width: 10),
                         TagWidget(tag: "BIG90"),
                         TagWidget(tag: "BIG90"),
-                        SizedBox(
-                          width: 10,
-                        ),
+                        SizedBox(width: 10),
                         TagWidget(tag: "BIG90"),
                         TagWidget(tag: "BIG90"),
-                        SizedBox(
-                          width: 10,
-                        ),
+                        SizedBox(width: 10),
                         TagWidget(tag: "BIG90"),
                       ],
                     ),
