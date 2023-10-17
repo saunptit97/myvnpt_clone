@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_vnpt/routes/routes.dart';
 import 'package:my_vnpt/utils/color_util.dart';
+import 'package:my_vnpt/utils/const_util.dart';
 import 'package:my_vnpt/utils/icons_utils.dart';
 import 'package:my_vnpt/widgets/sliver_widget.dart';
 
@@ -19,32 +20,6 @@ class PhonePackageScreen extends StatefulWidget {
 }
 
 class _PhonePackageScreenState extends State<PhonePackageScreen> {
-  final List<Map<String, dynamic>> packages = [
-    {
-      "image": "assets/images/post1.png",
-      "name": "VÔ CỰC (HOT)",
-      "content":
-          """- 5GB Data (hết dung lượng dừng truy cập)\n- Miễn phí cước cuộc gọi di động nội mạng VinaPhone dưới 20 """,
-      "price": "10.000đ/ ngày",
-      "tags": "On Plus",
-    },
-    {
-      "image": "assets/images/post2.png",
-      "name": "TG599",
-      "content":
-          """- 12GB Data/ngày (hết dung lượng dừng truy cập)\n- 4.000 phút gọi di động nội mạng VinaPhone""",
-      "price": "599.000/ tháng",
-      "tags": "data ngày",
-    },
-    {
-      "image": "assets/images/post3.png",
-      "name": "VD100T",
-      "content":
-          """- 1GB Data/ngày (hết dung lượng dừng truy cập)\n- Miễn phí Data truy cập ứng dụng Tiktok, MyTV OTT""",
-      "price": "100.000/ tháng",
-      "tags": "thương gia",
-    },
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -163,16 +138,16 @@ class _PhonePackageScreenState extends State<PhonePackageScreen> {
             padding: const EdgeInsets.all(0),
             itemBuilder: (_, index) {
               return ItemPackageWidget(
-                data: packages[index],
+                data: ConstUtil.packages[index],
                 onTap: () => Navigator.pushNamed(
                   context,
                   RouteNames.packageDetail,
-                  arguments: {"detail": packages[index]},
+                  arguments: {"detail": ConstUtil.packages[index]},
                 ),
               );
             },
             shrinkWrap: true,
-            itemCount: packages.length,
+            itemCount: ConstUtil.packages.length,
             separatorBuilder: (BuildContext context, int index) {
               return const Divider();
             },
@@ -207,15 +182,15 @@ class _PhonePackageScreenState extends State<PhonePackageScreen> {
               scrollDirection: Axis.horizontal,
               itemBuilder: (_, index) {
                 return ItemPackageData(
-                  data: packages[index],
+                  data: ConstUtil.packages[index],
                   onTap: () => Navigator.pushNamed(
                     context,
                     RouteNames.packageDetail,
-                    arguments: {"detail": packages[index]},
+                    arguments: {"detail": ConstUtil.packages[index]},
                   ),
                 );
               },
-              itemCount: packages.length,
+              itemCount: ConstUtil.packages.length,
               separatorBuilder: (BuildContext context, int index) {
                 return const SizedBox(width: 20);
               },
@@ -248,15 +223,15 @@ class _PhonePackageScreenState extends State<PhonePackageScreen> {
               scrollDirection: Axis.horizontal,
               itemBuilder: (_, index) {
                 return ItemFreePackage(
-                  data: packages[index],
+                  data: ConstUtil.packages[index],
                   onTap: () => Navigator.pushNamed(
                     context,
                     RouteNames.packageDetail,
-                    arguments: {"detail": packages[index]},
+                    arguments: {"detail": ConstUtil.packages[index]},
                   ),
                 );
               },
-              itemCount: packages.length,
+              itemCount: ConstUtil.packages.length,
               separatorBuilder: (BuildContext context, int index) {
                 return const SizedBox(width: 20);
               },

@@ -23,6 +23,7 @@ class SliverWidget extends StatelessWidget {
             snap: true,
             actionsIconTheme: const IconThemeData(opacity: 0.0),
             centerTitle: true,
+            leading: const BackButton(color: Colors.white),
             flexibleSpace: Stack(
               children: <Widget>[
                 Positioned.fill(

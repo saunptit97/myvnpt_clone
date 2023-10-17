@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_vnpt/category/view.dart';
 import 'package:my_vnpt/confirm_payment/view.dart';
 import 'package:my_vnpt/home_navigate/view.dart';
+import 'package:my_vnpt/phone_package/phone_package.dart';
 import 'package:my_vnpt/phone_package_detail/view.dart';
 import 'package:my_vnpt/recharge_money/view.dart';
 import 'package:my_vnpt/routes/routes.dart';
@@ -44,6 +45,13 @@ class Pages {
         return MaterialPageRoute(
           builder: (_) {
             return CategoryScreen();
+          },
+          settings: settings,
+        );
+      case RouteNames.packageMobile:
+        return MaterialPageRoute(
+          builder: (_) {
+            return const PhonePackageScreen();
           },
           settings: settings,
         );

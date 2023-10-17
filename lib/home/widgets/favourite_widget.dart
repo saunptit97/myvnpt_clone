@@ -14,25 +14,21 @@ class FavouriteWidget extends StatefulWidget {
 class _FavouriteWidgetState extends State<FavouriteWidget> {
   final List<Map<String, dynamic>> favourites = [
     {
-      "icon": IconUtils.icNapDienThoai,
+      "icon": IconUtils.icNapDienThoai2,
       "name": "Nạp điện thoại",
       "onTap": () {}
     },
     {
-      "icon": IconUtils.icNapDienThoai,
+      "icon": IconUtils.icThongTinThueBao,
       "name": "Thông tin thuê bao",
       "onTap": () {}
     },
     {
-      "icon": IconUtils.icNapDienThoai,
+      "icon": IconUtils.icCuocVienThong,
       "name": "Đóng cước viễn thông",
       "onTap": () {}
     },
-    {
-      "icon": IconUtils.icNapDienThoai,
-      "name": "Cài đặt thông báo",
-      "onTap": () {}
-    },
+    {"icon": IconUtils.icThongBao, "name": "Cài đặt thông báo", "onTap": () {}},
   ];
 
   @override

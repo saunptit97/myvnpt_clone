@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_vnpt/recharge_money/view.dart';
 import 'package:my_vnpt/routes/routes.dart';
 import 'package:my_vnpt/utils/color_util.dart';
 import 'package:my_vnpt/utils/icons_utils.dart';
@@ -12,21 +11,22 @@ class HeaderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Stack(
-      children: [
-        Container(
-          height: size.height / 3,
-          margin: const EdgeInsets.only(bottom: 100),
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.fitHeight,
-              image: AssetImage(
-                IconUtils.uvHome,
-              ),
-              alignment: Alignment.topRight,
+    return SizedBox(
+      child: Stack(
+        children: [
+          SizedBox(
+            height: size.height / 2 - 100,
+            width: size.width,
+          ),
+          Positioned(
+            top: 0,
+            right: 0,
+            child: Image.asset(
+              IconUtils.uvHome,
+              height: 250,
             ),
           ),
-          child: Padding(
+          Padding(
             padding: const EdgeInsets.all(20.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,27 +36,11 @@ class HeaderWidget extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Container(
+                        SizedBox(
                           height: 60,
                           width: 60,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(45),
-                          ),
-                          child: Center(
-                            child: Container(
-                              height: 54,
-                              width: 54,
-                              decoration: BoxDecoration(
-                                color: const Color(0xffE4EBFF),
-                                borderRadius: BorderRadius.circular(45),
-                              ),
-                              child: const Icon(
-                                Icons.person,
-                                size: 54,
-                                color: Color(0xff4296FF),
-                              ),
-                            ),
+                          child: Image.asset(
+                            IconUtils.icProfile,
                           ),
                         ),
                         const SizedBox(width: 10),
@@ -126,91 +110,86 @@ class HeaderWidget extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 20),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.85),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      padding: const EdgeInsets.all(15),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Image.asset(
+                                IconUtils.icPhoneGray,
+                                width: 20,
+                                height: 20,
+                              ),
+                              const SizedBox(width: 4),
+                              const Text("0824 318 851 - Thuê bao trả trước"),
+                              const Spacer(),
+                              const Icon(
+                                Icons.arrow_forward_ios,
+                                size: 18,
+                                color: ColorUtil.primaryColor,
+                              )
+                            ],
+                          ),
+                          const SizedBox(height: 10),
+                          const Divider(),
+                          const SizedBox(height: 10),
+                          const Row(
+                            children: [
+                              ItemAccountWidget(
+                                title: "Tài khoản chính",
+                                value: 0,
+                              ),
+                              ItemAccountWidget(
+                                title: "Tài khoản khuyến mại",
+                                value: 0,
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 10),
+                          SizedBox(
+                            height: 40,
+                            child: ListView(
+                              scrollDirection: Axis.horizontal,
+                              children: [
+                                utilWidget(
+                                  "Nạp tiền",
+                                  IconUtils.icPhoneGray,
+                                  () => Navigator.pushNamed(
+                                    context,
+                                    RouteNames.rechargeMoney,
+                                  ),
+                                ),
+                                const SizedBox(width: 15),
+                                utilWidget(
+                                  "Tiện ích mở rộng",
+                                  IconUtils.icPhoneGray,
+                                  () {},
+                                ),
+                                const SizedBox(width: 15),
+                                utilWidget(
+                                  "Hỗ trợ",
+                                  IconUtils.icPhoneGray,
+                                  () {},
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ],
             ),
           ),
-        ),
-        Positioned(
-          bottom: 0,
-          child: Container(
-            decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.85),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            padding: const EdgeInsets.all(20),
-            margin: const EdgeInsets.all(20),
-            width: MediaQuery.of(context).size.width - 40,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    Image.asset(
-                      IconUtils.icPhoneGray,
-                      width: 20,
-                      height: 20,
-                    ),
-                    const SizedBox(width: 4),
-                    const Text("0824 318 851 - Thuê bao trả trước"),
-                    const Spacer(),
-                    const Icon(
-                      Icons.arrow_forward_ios,
-                      size: 18,
-                      color: ColorUtil.primaryColor,
-                    )
-                  ],
-                ),
-                const SizedBox(height: 10),
-                const Divider(color: Colors.white, thickness: 1),
-                const SizedBox(height: 10),
-                const Row(
-                  children: [
-                    ItemAccountWidget(
-                      title: "Tài khoản chính",
-                      value: 0,
-                    ),
-                    ItemAccountWidget(
-                      title: "Tài khoản khuyến mại",
-                      value: 0,
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 20),
-                SizedBox(
-                  height: 40,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      utilWidget(
-                        "Nạp tiền",
-                        IconUtils.icPhoneGray,
-                        () => Navigator.pushNamed(
-                          context,
-                          RouteNames.rechargeMoney,
-                        ),
-                      ),
-                      const SizedBox(width: 15),
-                      utilWidget(
-                        "Tiện ích mở rộng",
-                        IconUtils.icPhoneGray,
-                        () {},
-                      ),
-                      const SizedBox(width: 15),
-                      utilWidget(
-                        "Hỗ trợ",
-                        IconUtils.icPhoneGray,
-                        () {},
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            ),
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 

@@ -5,4 +5,5 @@ class RouteNames {
   static const String confirmPayment = '/confirm-payment';
   static const String packageDetail = "/package-detail";
   static const String category = '/category';
+  static const String packageMobile = "/package-mobile";
 }

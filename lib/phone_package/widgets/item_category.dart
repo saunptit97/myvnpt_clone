@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_vnpt/utils/icons_utils.dart';
 
 class ItemCategoryWidget extends StatelessWidget {
   const ItemCategoryWidget({
@@ -7,10 +6,12 @@ class ItemCategoryWidget extends StatelessWidget {
     required this.name,
     required this.icon,
     this.onTap,
+    this.size,
   });
   final String name;
   final String icon;
   final VoidCallback? onTap;
+  final double? size;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -20,11 +21,11 @@ class ItemCategoryWidget extends StatelessWidget {
         child: Column(
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(size ?? 30),
               child: Image.asset(
                 icon,
-                width: 60,
-                height: 60,
+                width: size ?? 60,
+                height: size ?? 60,
                 fit: BoxFit.cover,
               ),
             ),

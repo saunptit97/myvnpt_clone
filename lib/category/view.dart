@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_vnpt/phone_package/widgets/item_package.dart';
 import 'package:my_vnpt/routes/routes.dart';
-import 'package:my_vnpt/utils/color_util.dart';
 
 class CategoryScreen extends StatelessWidget {
   CategoryScreen({super.key});
